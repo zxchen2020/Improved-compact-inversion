@@ -1,0 +1,21 @@
+﻿@copyright 
+Xuxin Zhang and Zhaoxi Chen, China University of Geosciences(Beijing)
+2020.06
+______________________________________________________________
+This is the matlab code for the paper of 
+The improved compact inversion for gravity and gradiometry data.
+
+
+Copy all ".m "files in the file to the new folder and make sure that the folder is in the MATLAB run path.Before running inversion3D, you should organize your anomaly data and determine which data you use to back up your calculations (gravity or gravity gradient data).
+
+**data Format (.txt)
+x y z dz DXX dxy DXZ...
+The first three columns of data are the observation point coordinates (in m), followed by abnormal data (mGal for gravity and E for gradient data).
+
+**Data selection
+When calculating the master kernel matrix, the program not only calculates the master kernel matrix of gravity data, but also calculates the master kernel matrix of other gradient data. During the inversion calculation, you can choose which data to use for inversion calculation according to your own requirements.
+
+**To run the program
+Program requires you to input some parameters, including model, quantity and the size of the starting position, prior SNR of abnormal data, the weight coefficient of model constraint matrix (different weight coefficient leads to model the combination of different density and volume, hope there will be a can meet your expectations), a priori range of physical properties and the maximum number of iterations.
+Finally, p_new is the density distribution of the calculated model.
+The synthetic test data of gravity and gravity gradient of cuboid combination model "D_obs.txt" (3% gaussian noise) is also included in the file. The columns of abnormal data are respectively X yz dx DXX Dxy DXZ Dyy dyz DZZ.And the model subdivision parameter "mesh. TXT" file and the model true density distribution "shuang. TXT" file.To practice calculations.
